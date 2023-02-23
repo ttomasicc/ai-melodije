@@ -1,0 +1,11 @@
+spring:
+  # Isključeno predmemoriranje
+  cache:
+    type: none
+
+  # Direktorij za spremanje statičnih resursa (docker volume)
+  web:
+    resources:
+      # Pripaziti na prava pristupa direktoriju
+      # static-locations: file:/var/lib/docker/volumes/spring-data/_data/
+      static-locations: file:/tmp/spring-test/

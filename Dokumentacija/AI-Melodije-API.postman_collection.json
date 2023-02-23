@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "7ae5f2e1-3907-4137-ba14-c90fcf8b788f",
+		"name": "AI Melodije API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16324555"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Jwt",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/auth/token",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registracija - UMJETNIK",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"korime\": \"luna\",\n    \"email\": \"luna.thyy42@gmail.com\",\n    \"lozinka\": \"abc?=j0sN3Pr0b0Jn!j4L0z1nk4a!#!\",\n    \"ime\": \"Luna\",\n    \"prezime\": \"Thy\",\n    \"opis\": \"Kratak opis divne cure s AI mjeseca.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/auth/registracija",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"auth",
+								"registracija"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prijava - UMJETNIK",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"korime\": \"luna\",\n    \"lozinka\": \"abc?=j0sN3Pr0b0Jn!j4L0z1nk4a!#!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/auth/prijava",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"auth",
+								"prijava"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prijava - ADMINISTRATOR",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"korime\": \"soundwalk\",\n    \"lozinka\": \"n3Pr0b0JnAL0z1nk4a!!!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/auth/prijava",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"auth",
+								"prijava"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Odjava",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/auth/odjava",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"auth",
+								"odjava"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Umjetnici",
+			"item": [
+				{
+					"name": "Dohvati umjetnika",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ažuriraj umjetnika",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tin.tomasic74@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lozinka",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ime",
+									"value": "Timmy",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "prezime",
+									"value": "Toma",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "opis",
+									"value": "Kompletno novi opis",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "slika",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Žanrovi",
+			"item": [
+				{
+					"name": "Dohvati sve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/zanrovi",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"zanrovi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj žanr",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"naziv\": \"retro funk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/zanrovi",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"zanrovi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ažuriraj žanr",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"naziv\": \"retro funk reggae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/zanrovi/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"zanrovi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obriši žanr",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/zanrovi/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"zanrovi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obriši nekorištene",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/zanrovi",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"zanrovi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albumi",
+			"item": [
+				{
+					"name": "Dohvati sve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"naziv\": \"Futura II\",\n    \"opis\": \"Neviđeno do sad. Mega ekstra ne-ordinarna glazba. All by meself (and AI).\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ažuriraj album",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "naziv",
+									"value": "Avangarda 3. dio",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "opis",
+									"value": "Neviđeno do sad. Mega ekstra ne-ordinarna glazba. All by me (and AI). EDIT: Dodane su još tri melodije s novog Google MusicLM platforme - uživajte, pozz!",
+									"type": "text"
+								},
+								{
+									"key": "slika",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obriši album",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Melodije",
+			"item": [
+				{
+					"name": "Dohvati sve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1/melodije",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1",
+								"melodije"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dohvati melodiju",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1/melodije/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1",
+								"melodije",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj melodiju",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zanrId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "audio",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "naziv",
+									"value": "Čarobna tehno šuma",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1/melodije",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1",
+								"melodije"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ažuriraj melodiju",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"naziv\": \"Čarobna tehnološka AI šumica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1/melodije/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1",
+								"melodije",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obriši melodiju",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/umjetnici/1/albumi/1/melodije/1",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"umjetnici",
+								"1",
+								"albumi",
+								"1",
+								"melodije",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "Nove stvari",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/info/novo",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"info",
+								"novo"
+							],
+							"query": [
+								{
+									"key": "resource",
+									"value": "melodija",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "15",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pretraživanje",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bazican_url}}/info/pretrazivanje?title=AI&resource=melodija",
+							"host": [
+								"{{bazican_url}}"
+							],
+							"path": [
+								"info",
+								"pretrazivanje"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "AI"
+								},
+								{
+									"key": "resource",
+									"value": "melodija"
+								},
+								{
+									"key": "size",
+									"value": "15",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwt}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const jwtUrl = pm.collectionVariables.get(\"bazican_url\") + \"/auth/token\";",
+					"",
+					"pm.sendRequest({",
+					"    url: jwtUrl,",
+					"    method: 'GET',",
+					"    header: {",
+					"        'Content-type': 'application/json'",
+					"    }",
+					"}, (err, res) => {",
+					"    console.log(res.json().token);",
+					"    pm.collectionVariables.set(\"jwt\", res.json().token);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bazican_url",
+			"value": "localhost:8080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "jwt",
+			"value": "null",
+			"type": "string"
+		}
+	]
+}
